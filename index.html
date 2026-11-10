@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MELLOW — 감정을 읽는 작은 순간</title>
+  <meta name="description" content="사용자가 입력한 한국어 문장을 AI로 분석하여 긍정, 부정, 중립 감성과 추정 신뢰도, 판단 이유를 제공하는 웰니스 감성 분석 서비스">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#sentiment-form" class="skip-link">본문 바로가기</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/" class="brand-mark">MELLOW</a>
+      <nav class="header-nav" aria-label="메인 메뉴">
+        <a href="#about" class="nav-link">ABOUT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" aria-label="서비스 소개">
+    <div class="hero-content">
+      <span class="hero-eyebrow">A MOMENT FOR YOURSELF</span>
+      <h1 class="hero-title">
+        <span class="title-line">Pause. Feel.</span>
+        <span class="title-line">Understand.</span>
+      </h1>
+      <p class="hero-desc">당신의 문장에 담긴 감정의 결을 천천히 읽어드립니다.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content" id="about">
+    <!-- Analysis Form Card -->
+    <section class="analysis-card" aria-labelledby="analysis-heading">
+      <div class="section-header">
+        <h2 id="analysis-heading" class="section-title">오늘의 마음을 문장으로 남겨보세요</h2>
+        <p class="section-subtitle">짧은 문장부터 긴 생각까지, 최대 2,000자까지 분석할 수 있어요.</p>
+      </div>
+
+      <form id="sentiment-form" novalidate>
+        <div class="form-group">
+          <label for="text-input" class="form-label">분석할 문장</label>
+          <div class="textarea-wrapper">
+            <textarea
+              id="text-input"
+              name="text"
+              class="text-input"
+              placeholder="예: 오늘 하루는 조금 지쳤지만, 저녁 노을을 보며 작은 위로를 받았다."
+              maxlength="2000"
+              rows="6"
+              required
+            ></textarea>
+          </div>
+          <div class="form-meta">
+            <span class="privacy-notice">입력한 문장은 분석 결과와 함께 서비스 데이터베이스에 저장됩니다.</span>
+            <span class="char-counter"><span id="char-count">0</span> / 2,000자</span>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="analyze-button" class="btn-primary">
+            감정 분석하기
+          </button>
+        </div>
+      </form>
+
+      <!-- Status / Error Notification -->
+      <div id="status-message" class="status-message" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Result Card -->
+    <section id="result-section" class="result-section" aria-labelledby="result-heading" aria-live="polite">
+      <span class="result-badge-label">ANALYSIS RESULT</span>
+      <h2 id="result-heading" class="visually-hidden" style="display:none;">분석 결과</h2>
+      
+      <div class="result-main">
+        <div id="sentiment-label" class="sentiment-badge neutral">
+          중립
+        </div>
+        <div class="confidence-text">
+          추정 신뢰도 <strong id="confidence-value">0%</strong>
+        </div>
+      </div>
+
+      <!-- Meter Bar -->
+      <div class="confidence-meter-container">
+        <div class="meter-track" aria-hidden="true">
+          <div id="confidence-bar" class="meter-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Reason Box -->
+      <div class="reason-container">
+        <h3 class="reason-title">이렇게 판단했어요</h3>
+        <p id="reason-text" class="reason-text"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="footer-disclaimer">AI 감성 분석은 참고용이며 전문적인 심리 진단이나 치료 조언이 아닙니다.</p>
+      <p class="footer-privacy">입력 문장은 서비스 품질 개선 및 분석 결과 보존을 위해 데이터베이스에 저장됩니다.</p>
+      <p class="footer-copy">&copy; 2026 MELLOW. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
+

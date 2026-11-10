@@ -1,0 +1,19 @@
+{
+  "name": "mellow-sentiment",
+  "version": "1.0.0",
+  "description": "MELLOW - Korean Sentiment Analysis Wellness Web Service",
+  "type": "module",
+  "scripts": {
+    "start": "node dev-server.js",
+    "dev": "node dev-server.js",
+    "vercel:dev": "vercel dev",
+    "build": "echo \"Static build ready\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.0",
+    "openai": "^7.54.0"
+  }
+}
