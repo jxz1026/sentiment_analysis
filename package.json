@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node dev-server.js",
     "dev": "node dev-server.js",
-    "vercel:dev": "vercel dev",
-    "build": "echo \"Static build ready\""
+    "vercel:dev": "vercel dev"
   },
   "keywords": [],
   "author": "",
