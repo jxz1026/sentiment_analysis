@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node dev-server.js",
     "dev": "node dev-server.js",
-    "vercel:dev": "vercel dev"
+    "vercel:dev": "vercel dev",
+    "build": ""
   },
   "keywords": [],
   "author": "",
